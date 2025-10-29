@@ -1,0 +1,54 @@
+
+
+  *{
+    background-image: url("imagenes/baba.jpg"); /* Una imagen más ligera para móviles */
+    background-size: cover;
+    background-position: top center; /* Ajusta la posición si es necesario */
+  }
+}
+
+}
+
+    
+    
+}
+ .LETRA {
+    color: white;
+    text-align: center;
+     
+    
+ }
+.galeria{
+
+display: flex;
+
+width: 500px;
+
+height: 300px;
+
+}
+
+.galeria img{
+
+width: 0px;
+
+flex-grow: 1;
+
+object-fit: center;
+
+filter: brightness(80%);
+
+transition: .7s ease;
+
+}
+
+.galeria img:hover{
+
+width: 500px;
+
+opacity: 1;
+
+filter: brightness (130%);
+
+}
+

@@ -1,0 +1,135 @@
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="es">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música de Fondo con Control</title>
+</head>
+<body>
+
+    <audio id="miMusica" loop>
+        <source src="audio/Sentosa(MP3_160K).mp3" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <button id="botonReproduccion">Reproducir</button>
+
+    <label for="volumen">Volumen:</label>
+    <input type="range" id="volumen" min="0" max="1" step="0.1" value="1">
+
+    
+
+    <script>
+        // Obtener el elemento de audio y el control de volumen
+        var musica = document.getElementById("miMusica");
+        var botonReproduccion = document.getElementById("botonReproduccion");
+        var controlVolumen = document.getElementById("volumen");
+
+        // Función para reproducir o pausar la música
+        function reproducirPausar() {
+            if (musica.paused) {
+                musica.play();
+                botonReproduccion.textContent = "Pausar";
+            } else {
+                musica.pause();
+                botonReproduccion.textContent = "Reproducir";
+            }
+        }
+
+        // Función para ajustar el volumen
+        function ajustarVolumen() {
+            musica.volume = controlVolumen.value;
+        }
+
+        // Agregar eventos
+        botonReproduccion.addEventListener("click", reproducirPausar);
+        controlVolumen.addEventListener("input", ajustarVolumen);
+
+        // Opcional: Asegurarse de que la música se inicie pausada
+        musica.pause();
+        botonReproduccion.textContent = "Reproducir";
+ 
+
+
+
+
+       
+    </script>
+<br>
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Oscuro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <button id="darkModeToggle">Cambiar a Modo Oscuro</button>
+
+    <div class="content">
+        <h1>ARMAS EVOLUTIVAS</h1>
+        <p>Estas armas se obtienen desde nivel 1 y hasta el momento hay 14 armas evolutivas diferentes:
+
+AK47 - Dragón Flama Azul
+UMP - Día Booyah 2020
+SCAR - Megalodón Alfa
+MP40 - Cobra Depredadora
+M1014 - Dragón Flama Verde
+XM8 - Guardián del Destino
+FAMAS - Sonrisa Infernal
+UMP - DÍA BOOYAH 2021
+MP5 - Divinidad Platino
+M1887- Conquistador Digital
+M4A1- Dragón Infernal
+Puño de Dragon
+AN94 - Aullador Malvado
+Thompson - Explosion Colosal
+M1014 - Destruccion Escorpion </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>/* styles.css */
+body {
+    background-color: #fff;
+    color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.content {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.dark-mode .content {
+    border-color: #666;
+}
+</style><script>// script.js
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDarkMode = body.classList.contains('dark-mode');
+    darkModeToggle.textContent = isDarkMode ? ' Modo Claro☀️' : 'Modo Oscuro🌙';
+    localStorage.setItem('darkMode', isDarkMode);
+});
+
+// Mantener el modo oscuro al recargar la página
+if (localStorage.getItem('darkMode') === 'true') {
+    body.classList.add('dark-mode');
+    darkModeToggle.textContent = 'Cambiar a Modo Claro';
+}
+</script>
+  
