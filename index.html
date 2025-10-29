@@ -1,0 +1,202 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="h.css">
+    
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música de Fondo con Control</title>
+</head>
+<body>
+
+    <audio id="miMusica" loop>
+        <source src="audio/Carin Leon_ Garena Free Fire - Modo Insano [Official Video](MP3_160K).mp3" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <button id="botonReproduccion">Reproducir</button>
+
+    <label for="volumen">Volumen:</label>
+    <input type="range" id="volumen" min="0" max="1" step="0.1" value="1">
+
+    
+
+    <script>
+        // Obtener el elemento de audio y el control de volumen
+        var musica = document.getElementById("miMusica");
+        var botonReproduccion = document.getElementById("botonReproduccion");
+        var controlVolumen = document.getElementById("volumen");
+
+        // Función para reproducir o pausar la música
+        function reproducirPausar() {
+            if (musica.paused) {
+                musica.play();
+                botonReproduccion.textContent = "Pausar";
+            } else {
+                musica.pause();
+                botonReproduccion.textContent = "Reproducir";
+            }
+        }
+
+        // Función para ajustar el volumen
+        function ajustarVolumen() {
+            musica.volume = controlVolumen.value;
+        }
+
+        // Agregar eventos
+        botonReproduccion.addEventListener("click", reproducirPausar);
+        controlVolumen.addEventListener("input", ajustarVolumen);
+
+        // Opcional: Asegurarse de que la música se inicie pausada
+        musica.pause();
+        botonReproduccion.textContent = "Reproducir";
+    </script>
+<br>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .section {
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .navy {
+      background-color: #001f3f;
+      color: white;
+    }
+
+    
+
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-toggle div {
+      width: 30px;
+      height: 4px;
+      background-color: #001f3f;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .menu {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #001f3f;
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      padding: 10px;
+      z-index: 1;
+      width: 200px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 6px 0;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #005599;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 10px;
+        font-size: 1rem;
+      }
+
+      .menu {
+        width: 100%;
+        right: 0;
+        top: 60px;
+      }
+
+      .menu-toggle {
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .menu-toggle div {
+        width: 25px;
+        height: 3px;
+      }
+
+      .menu a {
+        font-size: 0.9rem;
+      }
+    }
+    .head {
+        text-align: center;
+
+    }
+  </style>
+</head>
+
+
+  <!-- Sección 1 -->
+ <h1 class="LETRA">FREE FIRE</h1>
+ <p class="LETRA">el estilo de la batalla </p>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="menu" id="menu">
+      <a href="g.html">MENU</a>
+      <a href="m.html">Eventos</a>
+      <a href="p.html">INFORMACION</a>
+      <a href="sc4.html">CONTACTOS</a>
+      
+      
+    </div>
+  </div>
+
+  <!-- Sección 2 -->
+  
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+<hr>
+ <P>
+
+ </P>
+
+</body>
+</html>
